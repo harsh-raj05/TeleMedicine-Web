@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import api from "../services/api";
+import { Mail, Lock } from "lucide-react"; 
 
 function Login() {
   const [form, setForm] = useState({});
@@ -29,33 +30,45 @@ function Login() {
   };
 
   return (
-    <div className="min-h-screen flex justify-center items-center 
-      bg-[url('/images/telemed5.jpg')] bg-cover bg-center bg-no-repeat px-4">
+    <div className="min-h-screen flex justify-center items-center bg-center bg-cover bg-no-repeat relative"
+      style={{
+        backgroundImage: "url('/images/telemed9.gif')"
+      }}>
 
-      <div className="bg-white p-10 rounded-2xl shadow-lg w-full max-w-md mr-160">
-        <h2 className="text-3xl font-bold text-center text-blue-700 mb-2">
+      <div className="absolute inset-0 bg-black/40 backdrop-blur-none" />
+
+      <div className="relative bg-white/90 p-10 rounded-2xl shadow-xl w-full max-w-md ml-80">
+        <h2 className="text-4xl font-extrabold text-center text-transparent bg-clip-text bg-gradient-to-r from-sky-500 to-indigo-600 tracking-wide mb-2">
           TeleMedicine Login
         </h2>
-        <p className="text-center text-gray-500 mb-6">
+
+        <p className="text-center text-gray-600 mb-8">
           Access your healthcare portal
         </p>
 
         <form onSubmit={handleSubmit} className="space-y-5">
-          <input
-            name="email"
-            type="email"
-            placeholder="Email"
-            onChange={handleChange}
-            className="w-full border p-3 rounded-lg focus:ring-2 focus:ring-blue-500 outline-none"
-          />
 
-          <input
-            name="password"
-            type="password"
-            placeholder="Password"
-            onChange={handleChange}
-            className="w-full border p-3 rounded-lg focus:ring-2 focus:ring-blue-500 outline-none"
-          />
+          <div className="flex items-center border rounded-lg p-3 bg-white shadow-sm">
+            <Mail className="text-gray-400 mr-3" size={20}/>
+            <input
+              name="email"
+              type="email"
+              placeholder="Email"
+              onChange={handleChange}
+              className="w-full outline-none"
+            />
+          </div>
+
+          <div className="flex items-center border rounded-lg p-3 bg-white shadow-sm">
+            <Lock className="text-gray-400 mr-3" size={20}/>
+            <input
+              name="password"
+              type="password"
+              placeholder="Password"
+              onChange={handleChange}
+              className="w-full outline-none"
+            />
+          </div>
 
           <button
             type="submit"
@@ -64,10 +77,10 @@ function Login() {
             Login
           </button>
 
-          <p className="text-center text-gray-600">
-            New here?
-            <Link className="text-blue-600 ml-1 hover:underline" to="/register">
-              Create account
+          <p className="text-center text-gray-700">
+            New user?
+            <Link className="text-blue-600 ml-1 hover:underline font-medium" to="/register">
+              Create an account
             </Link>
           </p>
         </form>
