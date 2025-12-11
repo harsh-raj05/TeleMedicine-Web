@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import api from "../services/api";
+// import DarkModeToggle from "../components/DarkModeToggle";
 
 function PatientDashboard() {
   const [appointments, setAppointments] = useState([]);
@@ -27,8 +28,7 @@ function PatientDashboard() {
      style={{ backgroundImage: "url('/images/telemed10.jpg')" }}>
 
       {/* Header */}
-      <header className=" backdrop-blur-3xl border-b border-white/40 shadow-sm sticky top-0 z-50">
-
+      <header className="backdrop-blur-3xl border-b border-white/40 shadow-sm sticky top-0 z-50">
         <div className="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
 
           {/* Left */}
@@ -43,6 +43,9 @@ function PatientDashboard() {
 
           {/* Right */}
           <div className="flex items-center gap-4">
+
+            {/* Dark Mode Toggle */}
+            {/* <DarkModeToggle /> */}
 
             <img
               src="/images/user1.png"
@@ -59,6 +62,7 @@ function PatientDashboard() {
 
         </div>
       </header>
+
 
 
       <div className="max-w-5xl mx-auto p-6">
