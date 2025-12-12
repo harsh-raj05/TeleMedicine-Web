@@ -75,6 +75,12 @@ function PatientDashboard() {
           >
             Book New Appointment
           </button>
+          <button
+            onClick={() => navigate("/upload-record")}
+            className="bg-purple-600 text-white px-5 py-3 rounded-lg shadow hover:bg-purple-700"
+          >
+            Upload Medical Record
+          </button>
         </div>
 
         <h2 className="text-2xl font-bold mb-4 text-blue-600">
