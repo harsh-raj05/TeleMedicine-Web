@@ -6,6 +6,9 @@ import DoctorDashboard from "./pages/DoctorDashboard";
 import BookAppointment from "./pages/BookAppointment";
 import RoleProtectedRoute from "./components/RoleProtectedRoute";
 import WritePrescription from "./pages/WritePrescription";
+import UploadRecord from "./pages/UploadRecord";
+import ViewRecords from "./pages/ViewRecords";
+
 
 function App() {
   return (
@@ -51,6 +54,24 @@ function App() {
           element={
             <RoleProtectedRoute allowedRole="doctor">
               <WritePrescription />
+            </RoleProtectedRoute>
+          }
+        />
+        {/* Patient Medical Records */}
+        <Route
+          path="/upload-record"
+          element={
+            <RoleProtectedRoute allowedRole="patient">
+              <UploadRecord />
+            </RoleProtectedRoute>
+          }
+        />
+
+        <Route
+          path="/view-records"
+          element={
+            <RoleProtectedRoute allowedRole="patient">
+              <ViewRecords />
             </RoleProtectedRoute>
           }
         />

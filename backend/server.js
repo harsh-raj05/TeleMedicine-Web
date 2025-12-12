@@ -19,8 +19,7 @@ app.get("/", (req, res) => {
 app.use("/api/auth", require("./routes/authRoutes"));
 app.use("/api/appointments", require("./routes/appointmentRoutes"));
 
-app.use("/api/records", require("./routes/medicalRecordRoutes"));
-
+app.use("/api/medical", require("./routes/medicalRoutes"));
 
 
 app.listen(process.env.PORT, () => {

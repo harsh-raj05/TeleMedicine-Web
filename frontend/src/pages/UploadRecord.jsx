@@ -2,52 +2,47 @@ import { useState } from "react";
 import api from "../services/api";
 
 function UploadRecord() {
-  const user = JSON.parse(localStorage.getItem("user"));
   const [file, setFile] = useState(null);
-  const [title, setTitle] = useState("");
 
   const handleUpload = async () => {
-    // Step 1: Upload file to Cloudinary or backend
+    if (!file) return alert("Please select a file!");
+
     const formData = new FormData();
-    formData.append("file", file);
+    formData.append("record", file);
 
-    const uploadRes = await api.post("/upload-file", formData, {
-      headers: { "Content-Type": "multipart/form-data" }
-    });
+    try {
+      await api.post("/medical/upload", formData, {
+        headers: {
+          "Content-Type": "multipart/form-data",
+          Authorization: "Bearer " + localStorage.getItem("token"),
+        },
+      });
 
-    // Step 2: save record info in MongoDB
-    await api.post("/records/upload", {
-      patient: user.id,
-      title,
-      fileUrl: uploadRes.data.url
-    });
-
-    alert("Record uploaded!");
+      alert("Record uploaded successfully!");
+    } catch {
+      alert("Upload failed");
+    }
   };
 
   return (
-    <div className="p-6 max-w-xl mx-auto">
-      <h1 className="text-xl font-bold mb-4">Upload Medical Record</h1>
+    <div className="min-h-screen flex flex-col justify-center items-center bg-gray-100">
 
-      <input
-        type="text"
-        placeholder="Record Title"
-        className="w-full border p-2 mb-3"
-        onChange={(e) => setTitle(e.target.value)}
-      />
+      <div className="bg-white p-8 shadow rounded-xl w-full max-w-md">
+        <h2 className="text-2xl font-bold mb-4">Upload Medical Record</h2>
 
-      <input
-        type="file"
-        className="w-full border p-2 mb-3"
-        onChange={(e) => setFile(e.target.files[0])}
-      />
+        <input
+          type="file"
+          onChange={(e) => setFile(e.target.files[0])}
+          className="mb-4"
+        />
 
-      <button
-        onClick={handleUpload}
-        className="bg-blue-600 text-white px-4 py-2 rounded-lg"
-      >
-        Upload
-      </button>
+        <button
+          onClick={handleUpload}
+          className="bg-blue-600 text-white px-4 py-2 rounded"
+        >
+          Upload
+        </button>
+      </div>
     </div>
   );
 }

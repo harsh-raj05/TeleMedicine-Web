@@ -54,7 +54,7 @@ function PatientDashboard() {
 
             <button
               onClick={logout}
-              className="bg-red-500 px-4 py-2 rounded-lg hover:bg-red-600 shadow text-white transition"
+              className="bg-red-500 px-4 py-2 rounded-lg hover:bg-red-600 shadow text-white transition cursor-pointer"
             >
               Logout
             </button>
@@ -68,19 +68,27 @@ function PatientDashboard() {
       <div className="max-w-5xl mx-auto p-6">
 
         {/* Book Appointment */}
-        <div className="flex justify-end mb-6">
+        <div className="flex justify-end mb-6 gap-2">
           <button
             onClick={() => (window.location.href = "/book-appointment")}
-            className="bg-cyan-500 text-white px-5 py-3 rounded-lg shadow hover:bg-cyan-700 transition"
+            className="bg-cyan-500 text-white px-5 py-3 rounded-lg shadow hover:bg-cyan-700 transition cursor-pointer"
           >
             Book New Appointment
           </button>
-          <button
+          {/* <button
             onClick={() => navigate("/upload-record")}
-            className="bg-purple-600 text-white px-5 py-3 rounded-lg shadow hover:bg-purple-700"
+            className="bg-purple-600 text-white px-5 py-3 rounded-lg shadow hover:bg-purple-700 cursor-pointer"
           >
             Upload Medical Record
           </button>
+
+          <button
+            onClick={() => navigate("/view-records")}
+            className="bg-green-600 text-white px-5 py-3 rounded-lg shadow hover:bg-green-700 cursor-pointer"
+          >
+            View My Records
+          </button> */}
+
         </div>
 
         <h2 className="text-2xl font-bold mb-4 text-blue-600">
