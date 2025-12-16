@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import api from "../services/api";
 // import DarkModeToggle from "../components/DarkModeToggle";
 
@@ -7,6 +8,7 @@ function PatientDashboard() {
 
   const user = JSON.parse(localStorage.getItem("user"));
   const token = localStorage.getItem("token");
+  const navigate = useNavigate();
 
   useEffect(() => {
     const fetchAppointments = async () => {
@@ -71,23 +73,23 @@ function PatientDashboard() {
         <div className="flex justify-end mb-6 gap-2">
           <button
             onClick={() => (window.location.href = "/book-appointment")}
-            className="bg-cyan-500 text-white px-5 py-3 rounded-lg shadow hover:bg-cyan-700 transition cursor-pointer"
+            className="bg-cyan-500 text-white px-5 py-3 rounded-lg shadow hover:bg-cyan-700 transition cursor-pointer font-bold"
           >
             Book New Appointment
           </button>
-          {/* <button
+          <button
             onClick={() => navigate("/upload-record")}
-            className="bg-purple-600 text-white px-5 py-3 rounded-lg shadow hover:bg-purple-700 cursor-pointer"
+            className="bg-purple-600 text-white px-5 py-3 rounded-lg shadow hover:bg-purple-700 cursor-pointer font-bold"
           >
             Upload Medical Record
           </button>
 
           <button
             onClick={() => navigate("/view-records")}
-            className="bg-green-600 text-white px-5 py-3 rounded-lg shadow hover:bg-green-700 cursor-pointer"
+            className="bg-green-600 text-white px-5 py-3 rounded-lg shadow hover:bg-green-700 cursor-pointer font-bold"
           >
             View My Records
-          </button> */}
+          </button>
 
         </div>
 

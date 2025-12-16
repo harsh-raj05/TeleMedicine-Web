@@ -9,6 +9,9 @@ connectDB();
 const app = express();
 app.use(cors());
 app.use(express.json());
+const path = require("path");
+// Serve uploaded files from /uploads
+app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 
 // Test route
 app.get("/", (req, res) => {
