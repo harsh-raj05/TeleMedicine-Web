@@ -38,7 +38,7 @@ function Login() {
       <div className="absolute inset-0 bg-black/40 backdrop-blur-none" />
 
       <div className="relative bg-white/90 p-10 rounded-2xl shadow-xl w-full max-w-md ml-80">
-        <h2 className="text-4xl font-extrabold text-center text-transparent bg-clip-text bg-gradient-to-r from-sky-500 to-indigo-600 tracking-wide mb-2">
+        <h2 className="text-4xl font-extrabold text-center text-transparent bg-clip-text bg-linear-to-r from-sky-500 to-indigo-600 tracking-wide mb-2">
           TeleMedicine Login
         </h2>
 

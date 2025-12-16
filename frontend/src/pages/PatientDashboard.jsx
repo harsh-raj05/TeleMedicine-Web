@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import api from "../services/api";
-// import DarkModeToggle from "../components/DarkModeToggle";
+import DarkModeToggle from "../components/DarkModeToggle";
 
 function PatientDashboard() {
   const [appointments, setAppointments] = useState([]);
