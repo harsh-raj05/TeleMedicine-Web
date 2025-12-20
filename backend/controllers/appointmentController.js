@@ -151,3 +151,21 @@ exports.generatePrescriptionPDF = async (req, res) => {
     res.status(500).json({ message: "Error generating PDF", error: err.message });
   }
 };
+
+// GET PATIENT HISTORY (All approved past appointments)
+exports.getPatientHistory = async (req, res) => {
+  try {
+    const { patientId } = req.params;
+
+    const history = await Appointment.find({
+      patient: patientId,
+      status: "approved"
+    })
+      .populate("doctor", "name specialization")
+      .sort({ date: -1, time: -1 });
+
+    res.json({ history });
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+};

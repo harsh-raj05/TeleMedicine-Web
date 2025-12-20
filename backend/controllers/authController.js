@@ -5,7 +5,7 @@ const jwt = require("jsonwebtoken");
 // REGISTER
 exports.register = async (req, res) => {
   try {
-    const { name, email, password, role } = req.body;
+    const { name, email, password, role, specialization, contactNumber, degreeQualification, workingExperience } = req.body;
 
     const existing = await User.findOne({ email });
     if (existing) {
@@ -14,12 +14,22 @@ exports.register = async (req, res) => {
 
     const hashed = await bcrypt.hash(password, 10);
 
-    const user = await User.create({
+    // Only save specialization and profile fields if role is doctor
+    const userData = {
       name,
       email,
       password: hashed,
-      role   // <-- VERY IMPORTANT
-    });
+      role
+    };
+
+    if (role === "doctor") {
+      if (specialization) userData.specialization = specialization;
+      if (contactNumber) userData.contactNumber = contactNumber;
+      if (degreeQualification) userData.degreeQualification = degreeQualification;
+      if (workingExperience) userData.workingExperience = workingExperience;
+    }
+
+    const user = await User.create(userData);
 
     res.json({ message: "User registered", user });
   } catch (err) {
@@ -56,7 +66,11 @@ exports.login = async (req, res) => {
         id: user._id,
         name: user.name,
         email: user.email,
-        role: user.role   // <-- REQUIRED for redirecting
+        role: user.role,
+        specialization: user.specialization || null,
+        contactNumber: user.contactNumber || null,
+        degreeQualification: user.degreeQualification || null,
+        workingExperience: user.workingExperience || null
       }
     });
 
@@ -64,3 +78,4 @@ exports.login = async (req, res) => {
     res.status(500).json({ message: "Login error" });
   }
 };
+
