@@ -3,7 +3,7 @@ import io from "socket.io-client";
 import { Send, X, MessageCircle, Paperclip } from "lucide-react";
 import api from "../services/api";
 
-const SOCKET_URL = import.meta.env.VITE_API_URL || "http://localhost:5000";
+const SOCKET_URL = import.meta.env.VITE_API_URL || "https://telemedicine-web.onrender.com";
 
 function ChatBox({ currentUser, receiver, onClose }) {
     const [messages, setMessages] = useState([]);

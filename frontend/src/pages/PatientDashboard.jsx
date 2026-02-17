@@ -5,7 +5,7 @@ import api from "../services/api";
 import RatingModal from "../components/RatingModal";
 import ChatBox from "../components/ChatBox";
 
-const SOCKET_URL = import.meta.env.VITE_API_URL || "http://localhost:5000";
+const SOCKET_URL = import.meta.env.VITE_API_URL || "https://telemedicine-web.onrender.com";
 
 function PatientDashboard() {
   const [appointments, setAppointments] = useState([]);
@@ -219,7 +219,7 @@ function PatientDashboard() {
                     onClick={() => {
                       const token = localStorage.getItem("token");
                       window.open(
-                        `http://localhost:5000/api/appointments/prescription-pdf/${a._id}?token=${token}`
+                        `https://telemedicine-web.onrender.com/api/appointments/prescription-pdf/${a._id}?token=${token}`
                       );
                     }}
                     className="mt-4 bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition"

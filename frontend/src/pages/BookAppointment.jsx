@@ -178,7 +178,7 @@ function BookAppointment() {
                   <div className="w-16 h-16 rounded-full overflow-hidden bg-white border-2 border-white shadow-sm flex-shrink-0">
                     {selectedDoctor.profilePicture ? (
                       <img
-                        src={`${import.meta.env.VITE_API_URL || 'http://localhost:5000'}${selectedDoctor.profilePicture}`}
+                        src={`${import.meta.env.VITE_API_URL || 'https://telemedicine-web.onrender.com'}${selectedDoctor.profilePicture}`}
                         alt={selectedDoctor.name}
                         className="w-full h-full object-cover"
                       />

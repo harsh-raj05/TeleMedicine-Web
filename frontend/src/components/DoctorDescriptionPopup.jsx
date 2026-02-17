@@ -51,7 +51,7 @@ function DoctorDescriptionPopup({ isOpen, onClose, doctor }) {
 
     const getProfilePictureUrl = () => {
         if (doctor?.profilePicture) {
-            return `${import.meta.env.VITE_API_URL || 'http://localhost:5000'}${doctor.profilePicture}`;
+            return `${import.meta.env.VITE_API_URL || 'https://telemedicine-web.onrender.com'}${doctor.profilePicture}`;
         }
         return null;
     };

@@ -22,7 +22,7 @@ function EditProfileModal({ isOpen, onClose, user, onProfileUpdate }) {
                 workingExperience: user.workingExperience || ""
             });
             if (user.profilePicture) {
-                setPreviewUrl(`${import.meta.env.VITE_API_URL || 'http://localhost:5000'}${user.profilePicture}`);
+                setPreviewUrl(`${import.meta.env.VITE_API_URL || 'https://telemedicine-web.onrender.com'}${user.profilePicture}`);
             }
         }
     }, [user]);

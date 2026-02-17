@@ -7,7 +7,7 @@ import EditProfileModal from "../components/EditProfileModal";
 import ChatBox from "../components/ChatBox";
 import PatientHistoryModal from "../components/PatientHistoryModal";
 
-const SOCKET_URL = import.meta.env.VITE_API_URL || "http://localhost:5000";
+const SOCKET_URL = import.meta.env.VITE_API_URL || "https://telemedicine-web.onrender.com";
 
 function DoctorDashboard() {
   const [appointments, setAppointments] = useState([]);
@@ -118,7 +118,7 @@ function DoctorDashboard() {
 
   const getProfilePictureUrl = () => {
     if (currentUser?.profilePicture) {
-      return `${import.meta.env.VITE_API_URL || 'http://localhost:5000'}${currentUser.profilePicture}`;
+      return `${import.meta.env.VITE_API_URL || 'https://telemedicine-web.onrender.com'}${currentUser.profilePicture}`;
     }
     return null;
   };
