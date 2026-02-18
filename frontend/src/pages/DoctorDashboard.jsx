@@ -215,7 +215,7 @@ function DoctorDashboard() {
           <div className="flex gap-3 items-center">
             <button
               onClick={() => setShowReviews(!showReviews)}
-              className="bg-purple-600 hover:bg-purple-700 px-4 py-2 rounded-lg shadow text-white transition flex items-center gap-2"
+              className="bg-purple-600 hover:bg-purple-700 px-4 py-2 rounded-lg shadow text-white transition flex items-center gap-2 cursor-pointer"
             >
               <MessageSquare size={18} />
               {showReviews ? "Hide" : "View"} Feedback
@@ -225,7 +225,7 @@ function DoctorDashboard() {
             <div className="relative" ref={dropdownRef}>
               <button
                 onClick={() => setShowProfileDropdown(!showProfileDropdown)}
-                className="bg-white/20 hover:bg-white/30 px-4 py-2 rounded-lg shadow text-white transition flex items-center gap-2 backdrop-blur-sm"
+                className="bg-white/20 hover:bg-white/30 px-4 py-2 rounded-lg shadow text-white transition flex items-center gap-2 backdrop-blur-sm cursor-pointer"
               >
                 <User size={18} />
                 Profile
@@ -240,7 +240,7 @@ function DoctorDashboard() {
                       setShowEditModal(true);
                       setShowProfileDropdown(false);
                     }}
-                    className="w-full px-4 py-2 text-left text-gray-700 hover:bg-gray-100 flex items-center gap-2"
+                    className="w-full px-4 py-2 text-left text-gray-700 hover:bg-gray-100 flex items-center gap-2 cursor-pointer"
                   >
                     <Edit size={16} className="text-blue-600" />
                     Edit Profile
@@ -248,7 +248,7 @@ function DoctorDashboard() {
                   <hr className="my-1" />
                   <button
                     onClick={logout}
-                    className="w-full px-4 py-2 text-left text-red-600 hover:bg-red-50 flex items-center gap-2"
+                    className="w-full px-4 py-2 text-left text-red-600 hover:bg-red-50 flex items-center gap-2 cursor-pointer"
                   >
                     <LogOut size={16} />
                     Logout
@@ -380,7 +380,7 @@ function DoctorDashboard() {
                   {a.status === "pending" && (
                     <button
                       onClick={() => updateStatus(a._id, "approved")}
-                      className="px-4 py-2 rounded bg-green-600 text-white hover:bg-green-700"
+                      className="px-4 py-2 rounded bg-green-600 text-white hover:bg-green-700 cursor-pointer"
                     >
                       Approve
                     </button>

@@ -137,7 +137,7 @@ function PatientDashboard() {
 
             <button
               onClick={logout}
-              className="bg-red-500 px-4 py-2 rounded-lg hover:bg-red-600 shadow text-white transition"
+              className="bg-red-500 cursor-pointer px-4 py-2 rounded-lg hover:bg-red-600 shadow text-white transition"
             >
               Logout
             </button>
@@ -153,7 +153,7 @@ function PatientDashboard() {
         <div className="flex justify-end mb-6">
           <button
             onClick={() => (window.location.href = "/book-appointment")}
-            className="bg-cyan-500 text-white px-5 py-3 rounded-lg shadow hover:bg-cyan-700 transition"
+            className="cursor-pointer bg-cyan-500 text-white px-5 py-3 rounded-lg shadow hover:bg-cyan-700 transition"
           >
             Book New Appointment
           </button>
@@ -222,7 +222,7 @@ function PatientDashboard() {
                         `https://telemedicine-web.onrender.com/api/appointments/prescription-pdf/${a._id}?token=${token}`
                       );
                     }}
-                    className="mt-4 bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition"
+                    className="mt-4 bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition cursor-pointer"
                   >
                     Download PDF
                   </button>
@@ -240,7 +240,7 @@ function PatientDashboard() {
                   {/* Chat Button */}
                   <button
                     onClick={() => openChat(a.doctor)}
-                    className="relative inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg transition shadow-sm"
+                    className="relative cursor-pointer inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg transition shadow-sm"
                   >
                     <MessageSquare size={18} />
                     Chat with Doctor
@@ -260,7 +260,7 @@ function PatientDashboard() {
                   ) : (
                     <button
                       onClick={() => setRatingModal({ open: true, appointment: a })}
-                      className="inline-flex items-center gap-2 bg-yellow-500 hover:bg-yellow-600 text-white px-4 py-2 rounded-lg transition shadow-sm"
+                      className="cursor-pointer inline-flex items-center gap-2 bg-yellow-500 hover:bg-yellow-600 text-white px-4 py-2 rounded-lg transition shadow-sm"
                     >
                       <Star size={18} />
                       Rate Doctor

@@ -73,14 +73,14 @@ function WritePrescription() {
           <div className="flex justify-between mt-6">
             <button
               onClick={() => navigate("/doctor-dashboard")}
-              className="bg-gray-400 text-white px-5 py-3 rounded-lg hover:bg-gray-500"
+              className="cursor-pointer bg-gray-400 text-white px-5 py-3 rounded-lg hover:bg-gray-500"
             >
               Cancel
             </button>
 
             <button
               onClick={handleSubmit}
-              className="bg-blue-600 text-white px-5 py-3 rounded-lg hover:bg-blue-700"
+              className="cursor-pointer bg-blue-600 text-white px-5 py-3 rounded-lg hover:bg-blue-700"
             >
               Save Prescription
             </button>

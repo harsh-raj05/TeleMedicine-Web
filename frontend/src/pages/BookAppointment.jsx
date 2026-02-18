@@ -211,7 +211,7 @@ function BookAppointment() {
                   <button
                     type="button"
                     onClick={() => setDescriptionPopup({ open: true, doctor: selectedDoctor })}
-                    className="bg-white p-2 rounded-lg text-gray-600 hover:text-blue-600 hover:bg-blue-50 transition shadow-sm border border-gray-200"
+                    className="bg-white p-2 rounded-lg text-gray-600 hover:text-blue-600 hover:bg-blue-50 transition shadow-sm border border-gray-200 cursor-pointer"
                     title="View Profile"
                   >
                     <Info size={20} />
@@ -263,7 +263,7 @@ function BookAppointment() {
           <button
             type="submit"
             disabled={!form.doctor}
-            className="w-full bg-gradient-to-r from-blue-600 to-indigo-600 text-white py-4 rounded-xl font-bold text-lg shadow-lg hover:shadow-xl hover:translate-y-[-2px] transition-all disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none"
+            className="w-full bg-gradient-to-r from-blue-600 to-indigo-600 text-white py-4 rounded-xl font-bold text-lg shadow-lg hover:shadow-xl hover:translate-y-[-2px] transition-all disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none cursor-pointer"
           >
             Confirm Appointment
           </button>
